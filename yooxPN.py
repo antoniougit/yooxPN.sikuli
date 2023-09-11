@@ -13,17 +13,18 @@ scheduleMonth = scheduleMonth[2:4]
 
 variantContent=[]
 
-with open("C:\\Users\\gachamnos\\Downloads\\pn.csv", 'rb') as csvfile:
+with open("C:\\Users\\gantoniou\\Downloads\\pn.csv", 'rb') as csvfile:
     reader = csv.reader(csvfile, delimiter=",")
     next(reader, None)  
     for row in reader:
         if not "".join(row[1]).strip():
             continue
-        else:
+        else: 
             variantContent.append(row[1].decode("utf-8"))
 variantContent.insert(0, variantContent.pop())
 
 variantNum = len(variantContent)
+
 click("1631691197455.png")
 sleep(0.2)
 click(Pattern("1631691235418.png").targetOffset(16,0))
@@ -261,4 +262,4 @@ click("1631262265870.png")
 sleep(0.2)
 click(Pattern("1631693033057.png").similar(0.90))
 wait("1631708732619.png")
-popup("Configuration READY! Please change date and send proofs!")
+popup("Configuration READY! Please enter current date and send proofs!")
